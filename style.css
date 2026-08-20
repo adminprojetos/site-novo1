@@ -784,10 +784,11 @@ button {
 .contato-inner {
   display: grid;
 
-  grid-template-columns:
-    1fr 320px;
+  grid-template-columns: 1fr 430px;
 
-  gap: 40px;
+  gap: 60px;
+
+  align-items: center;
 }
 
 .contato-title {
@@ -850,14 +851,22 @@ button {
   stroke: var(--sage-700);
 }
 
+.contato-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contato-foto img {
-  width: 100%;
-
-  height: 320px;
-
-  border-radius: 18px;
+  width: 430px;
+  height: 500px;
 
   object-fit: cover;
+
+  border-radius: 220px 220px 24px 24px;
+
+  box-shadow:
+    0 25px 50px rgba(46, 64, 48, 0.13);
 }
 
 .btn-fale {
@@ -1229,7 +1238,14 @@ button {
    RESPONSIVO — CELULAR
 ========================================================= */
 
-@media (max-width: 760px) {
+.contato-foto img {
+  width: min(340px, 90vw);
+  height: 410px;
+
+  margin: auto;
+
+  border-radius: 180px 180px 20px 20px;
+}
 
   .container {
     width: min(92%, 600px);
