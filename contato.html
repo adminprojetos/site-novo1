@@ -227,9 +227,7 @@
   const toggle = document.getElementById('darkToggle');
 
   if (localStorage.getItem('darkMode') === 'true') {
-
     document.documentElement.classList.add('dark');
-
   }
 
   toggle.addEventListener('click', () => {
@@ -253,9 +251,9 @@
 
   menuToggle.addEventListener('click', () => {
 
-    mobileMenu.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
 
-    if (mobileMenu.classList.contains('open')) {
+    if (mobileMenu.classList.contains('active')) {
 
       menuToggle.textContent = '✕';
 
