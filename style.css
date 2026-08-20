@@ -43,6 +43,7 @@ body {
   background: var(--cream);
   color: var(--text);
   line-height: 1.6;
+
   transition:
     background 0.3s ease,
     color 0.3s ease;
@@ -74,8 +75,10 @@ button {
 
 .site-header {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
 
   background: rgba(246, 244, 238, 0.94);
@@ -100,7 +103,9 @@ button {
 }
 
 
-/* Nome */
+/* =========================================================
+   MARCA
+========================================================= */
 
 .brand {
   text-decoration: none;
@@ -119,7 +124,9 @@ button {
 .brand h1 {
   font-size: 21px;
   font-weight: 600;
+
   line-height: 1.1;
+
   letter-spacing: -0.3px;
 }
 
@@ -133,17 +140,21 @@ button {
 }
 
 
-/* Ações do cabeçalho */
+/* =========================================================
+   AÇÕES DO CABEÇALHO
+========================================================= */
 
 .header-actions {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 }
 
 
 /* =========================================================
-   BOTÃO DARK MODE
+   BOTÕES DO CABEÇALHO
 ========================================================= */
 
 .dark-toggle,
@@ -160,6 +171,7 @@ button {
   color: var(--sage-900);
 
   border: 1px solid var(--border);
+
   border-radius: 50%;
 
   cursor: pointer;
@@ -175,15 +187,175 @@ button {
 .dark-toggle:hover,
 .menu-toggle:hover {
   background: var(--sage-100);
+
   transform: translateY(-2px);
 }
 
+
 /* =========================================================
-   HERO DA HOME
+   MENU HAMBÚRGUER
+========================================================= */
+
+/*
+   O botão é controlado pelo HTML/JavaScript.
+   Quando o menu está aberto, o JS pode trocar
+   o símbolo ☰ por X.
+*/
+
+.menu-toggle {
+  font-size: 23px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: min(360px, 88vw);
+
+  height: 100vh;
+
+  background: var(--white);
+
+  box-shadow:
+    -10px 0 35px rgba(0, 0, 0, 0.12);
+
+  z-index: 1200;
+
+  transform: translateX(100%);
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  transition:
+    transform 0.35s var(--ease),
+    opacity 0.25s ease,
+    visibility 0.35s ease;
+}
+
+
+/*
+   IMPORTANTE:
+   O menu pode ser aberto tanto com .open
+   quanto com .active.
+*/
+
+.mobile-menu.open,
+.mobile-menu.active {
+  transform: translateX(0);
+
+  visibility: visible;
+
+  opacity: 1;
+}
+
+.mobile-menu-inner {
+  height: 100%;
+
+  padding: 32px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* Botão X */
+
+.menu-close {
+  align-self: flex-end;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  color: var(--text);
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 25px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu-close:hover {
+  background: var(--sage-100);
+
+  transform: rotate(5deg);
+}
+
+
+/* Lista */
+
+.mobile-menu ul {
+  list-style: none;
+
+  margin-top: 55px;
+
+  padding: 0;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu a {
+  display: block;
+
+  padding: 18px 0;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--sage-500);
+
+  padding-left: 7px;
+}
+
+
+/* =========================================================
+   HERO — PÁGINA INICIAL
 ========================================================= */
 
 .hero-home {
   padding-top: 150px;
+
   padding-bottom: 100px;
 }
 
@@ -214,9 +386,11 @@ button {
   color: var(--sage-500);
 
   font-size: 14px;
+
   font-weight: 600;
 
   letter-spacing: 1.5px;
+
   text-transform: uppercase;
 }
 
@@ -247,12 +421,55 @@ button {
 }
 
 
-/* Foto */
+/* =========================================================
+   HERO — VERSÃO SIMPLES
+   Usada caso sua index esteja com hero-pro
+========================================================= */
+
+.hero-pro {
+  padding-top: 150px;
+
+  padding-bottom: 70px;
+}
+
+.hero-pro-inner.single-col {
+  max-width: 760px;
+
+  text-align: left;
+}
+
+.hero-pro-nome {
+  font-size: clamp(34px, 5vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 600;
+
+  margin-bottom: 14px;
+
+  color: var(--sage-950);
+}
+
+.hero-pro-desc {
+  max-width: 650px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOTO DA HOME
+========================================================= */
 
 .hero-home-image {
   position: relative;
 
   display: flex;
+
   justify-content: center;
 }
 
@@ -273,11 +490,16 @@ button {
 
 .hero-home-image img {
   width: min(430px, 100%);
+
   height: 500px;
 
   object-fit: cover;
 
-  border-radius: 220px 220px 24px 24px;
+  border-radius:
+    220px
+    220px
+    24px
+    24px;
 
   box-shadow:
     0 25px 50px rgba(46, 64, 48, 0.13);
@@ -285,7 +507,7 @@ button {
 
 
 /* =========================================================
-   NAVEGAÇÃO POR CARDS
+   CARDS DA HOME
 ========================================================= */
 
 .home-navigation {
@@ -298,9 +520,14 @@ button {
   color: var(--sage-900);
 
   font-size: 28px;
+
   font-weight: 500;
 
   margin-bottom: 40px;
+}
+
+.index-cards {
+  padding-bottom: 100px;
 }
 
 .index-cards-grid {
@@ -318,6 +545,7 @@ button {
   min-height: 225px;
 
   display: flex;
+
   flex-direction: column;
 
   padding: 28px 23px;
@@ -355,6 +583,7 @@ button {
   height: 42px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -375,6 +604,7 @@ button {
   color: var(--sage-900);
 
   font-size: 17px;
+
   font-weight: 600;
 
   line-height: 1.3;
@@ -397,7 +627,8 @@ button {
 
   font-size: 19px;
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease;
 }
 
 .index-card:hover .index-card-arrow {
@@ -406,66 +637,12 @@ button {
 
 
 /* =========================================================
-   FOOTER
-========================================================= */
-
-.site-footer {
-  padding: 35px 0;
-
-  background: var(--white);
-
-  border-top: 1px solid var(--border);
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.footer-inner {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 30px;
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-brand strong {
-  color: var(--sage-900);
-
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.footer-brand span {
-  color: var(--muted);
-
-  font-size: 12px;
-}
-
-.footer-copy {
-  text-align: right;
-
-  color: var(--muted);
-
-  font-size: 11px;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   SOBRE
+   SOBRE O SITE
 ========================================================= */
 
 .sobre-pro {
   padding-top: 170px;
+
   padding-bottom: 80px;
 }
 
@@ -475,8 +652,12 @@ button {
 
 .sobre-pro-titulo {
   font-size: 30px;
+
   margin-bottom: 22px;
+
   position: relative;
+
+  color: var(--sage-900);
 }
 
 .sobre-pro-titulo::after {
@@ -502,13 +683,24 @@ button {
   color: var(--muted);
 }
 
+.sobre-pro-lista {
+  margin-top: 25px;
+}
+
+.sobre-pro-lista p {
+  margin-bottom: 10px;
+
+  color: var(--muted);
+}
+
 
 /* =========================================================
-   HISTÓRIA
+   MINHA HISTÓRIA
 ========================================================= */
 
 .historia-pro {
   padding-top: 150px;
+
   padding-bottom: 80px;
 }
 
@@ -518,10 +710,13 @@ button {
   grid-template-columns: 340px 1fr;
 
   gap: 40px;
+
+  align-items: start;
 }
 
 .historia-pro-foto img {
   width: 100%;
+
   height: 420px;
 
   object-fit: cover;
@@ -531,16 +726,43 @@ button {
 
 .historia-pro-texto {
   color: var(--text);
+
+  max-width: 700px;
+}
+
+.historia-pro-texto h2 {
+  margin-bottom: 24px;
+
+  color: var(--sage-900);
+
+  font-size: 30px;
+}
+
+.historia-pro-texto p {
+  margin-bottom: 18px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+.historia-pro-texto strong {
+  color: var(--sage-900);
 }
 
 
 /* =========================================================
-   RECEITAS + CONTEÚDOS
+   RECEITAS + CONTEÚDOS EDUCATIVOS
 ========================================================= */
 
 .receitas-section {
   padding-top: 150px;
+
   padding-bottom: 80px;
+
+  width: min(1160px, 90%);
+
+  margin: 0 auto;
 }
 
 .receitas-grid {
@@ -582,6 +804,7 @@ button {
 
 .receita-card img {
   width: 100%;
+
   height: 180px;
 
   border-radius: 10px;
@@ -592,11 +815,16 @@ button {
 .receita-card h3 {
   margin-top: 12px;
 
-  padding-bottom: 8px;
+  padding:
+    0 5px 8px;
 
   text-align: center;
 
+  color: var(--sage-900);
+
   font-size: 17px;
+
+  line-height: 1.4;
 }
 
 
@@ -606,6 +834,7 @@ button {
 
 .receita-page {
   padding-top: 150px;
+
   padding-bottom: 70px;
 }
 
@@ -615,6 +844,7 @@ button {
 
 .receita-foto {
   width: 100%;
+
   height: 300px;
 
   border-radius: 18px;
@@ -636,6 +866,7 @@ button {
 
 .receita-page h3 {
   margin-top: 28px;
+
   margin-bottom: 10px;
 
   color: var(--sage-900);
@@ -643,6 +874,7 @@ button {
 
 .receita-page h4 {
   margin-top: 22px;
+
   margin-bottom: 8px;
 }
 
@@ -654,6 +886,7 @@ button {
 
 .receita-page ul {
   margin-left: 22px;
+
   margin-bottom: 18px;
 }
 
@@ -668,28 +901,41 @@ button {
 
 .contato-pro {
   padding-top: 150px;
+
   padding-bottom: 80px;
 }
 
 .contato-inner {
   display: grid;
 
-  grid-template-columns: 1fr 320px;
+  grid-template-columns:
+    1fr 320px;
 
   gap: 40px;
+
+  align-items: start;
+}
+
+.contato-cards {
+  max-width: 700px;
 }
 
 .contato-title {
-  font-size: 28px;
+  font-size: 32px;
+
   font-weight: 600;
 
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+
+  color: var(--sage-900);
 }
 
 .contato-sub {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 
   color: var(--muted);
+
+  line-height: 1.7;
 }
 
 .card-click {
@@ -718,14 +964,33 @@ button {
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .card-click:hover {
   transform: translateY(-4px);
 
+  border-color: var(--sage-300);
+
   box-shadow:
     0 16px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-click .icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--sage-100);
+
+  border-radius: 50%;
 }
 
 .card-click svg {
@@ -738,8 +1003,23 @@ button {
   stroke: var(--sage-700);
 }
 
+.card-click h3 {
+  margin-bottom: 2px;
+
+  color: var(--sage-900);
+
+  font-size: 16px;
+}
+
+.card-click p {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
 .contato-foto img {
   width: 100%;
+
   height: 320px;
 
   border-radius: 18px;
@@ -766,11 +1046,15 @@ button {
 
   text-decoration: none;
 
-  transition: 0.25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .btn-fale:hover {
   background: var(--sage-700);
+
+  transform: translateY(-2px);
 }
 
 
@@ -782,6 +1066,7 @@ button {
   position: fixed;
 
   bottom: 24px;
+
   right: 24px;
 
   background: var(--sage-500);
@@ -793,6 +1078,7 @@ button {
   border-radius: 12px;
 
   font-size: 14px;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -815,6 +1101,63 @@ button {
 
 
 /* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  padding: 35px 0;
+
+  background: var(--white);
+
+  border-top: 1px solid var(--border);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.footer-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.footer-brand {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.footer-brand strong {
+  color: var(--sage-900);
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.footer-brand span {
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.footer-copy {
+  text-align: right;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
    DARK MODE
 ========================================================= */
 
@@ -830,7 +1173,8 @@ button {
 .dark .site-header {
   background: rgba(29, 33, 29, 0.95);
 
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color:
+    rgba(255, 255, 255, 0.08);
 }
 
 .dark .brand,
@@ -846,7 +1190,8 @@ button {
 .dark .menu-toggle {
   color: #e6e9e3;
 
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color:
+    rgba(255, 255, 255, 0.12);
 }
 
 .dark .dark-toggle:hover,
@@ -867,7 +1212,8 @@ button {
 .dark .menu-close {
   color: #e6e9e3;
 
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color:
+    rgba(255, 255, 255, 0.12);
 }
 
 .dark .menu-close:hover {
@@ -875,21 +1221,28 @@ button {
 }
 
 .dark .mobile-menu li {
-  border-color: rgba(255, 255, 255, 0.09);
+  border-color:
+    rgba(255, 255, 255, 0.09);
 }
 
 .dark .mobile-menu a {
   color: #e6e9e3;
 }
 
+.dark .mobile-menu a:hover {
+  color: #a9c5a4;
+}
+
 
 /* Hero */
 
-.dark .hero-home-text h2 {
+.dark .hero-home-text h2,
+.dark .hero-pro-nome {
   color: #edf1ea;
 }
 
-.dark .hero-home-text p {
+.dark .hero-home-text p,
+.dark .hero-pro-desc {
   color: #b5beb3;
 }
 
@@ -913,7 +1266,8 @@ button {
 .dark .card-click {
   background: #292e29;
 
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color:
+    rgba(255, 255, 255, 0.08);
 
   color: #e6e9e3;
 }
@@ -928,7 +1282,8 @@ button {
   color: #afb8ad;
 }
 
-.dark .index-card-icon {
+.dark .index-card-icon,
+.dark .card-click .icon {
   background: #354035;
 }
 
@@ -939,14 +1294,23 @@ button {
 .dark .receita-page h3,
 .dark .receita-page h4,
 .dark .sobre-pro-titulo,
-.dark .contato-title {
+.dark .historia-pro-texto h2,
+.dark .contato-title,
+.dark .card-click h3 {
   color: #e6e9e3;
 }
 
 .dark .receita-page p,
 .dark .sobre-pro-desc,
-.dark .contato-sub {
+.dark .sobre-pro-lista p,
+.dark .historia-pro-texto p,
+.dark .contato-sub,
+.dark .card-click p {
   color: #b5beb3;
+}
+
+.dark .historia-pro-texto strong {
+  color: #d5e0d2;
 }
 
 
@@ -955,7 +1319,8 @@ button {
 .dark .site-footer {
   background: #181b18;
 
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color:
+    rgba(255, 255, 255, 0.08);
 }
 
 .dark .footer-brand strong {
@@ -974,6 +1339,19 @@ button {
   background: #a9c5a4;
 
   color: #1d211d;
+}
+
+
+/* Botão de contato */
+
+.dark .btn-fale {
+  background: #a9c5a4;
+
+  color: #1d211d;
+}
+
+.dark .btn-fale:hover {
+  background: #bdd2b8;
 }
 
 
@@ -998,21 +1376,19 @@ button {
 }
 
 @keyframes fadeIn {
-
   to {
     opacity: 1;
   }
-
 }
 
 @keyframes slideUp {
-
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
-
 }
+
 
 /* =========================================================
    RESPONSIVO — TABLET
@@ -1033,6 +1409,19 @@ button {
     font-size: 46px;
   }
 
+  .historia-pro-inner {
+    grid-template-columns:
+      280px 1fr;
+
+    gap: 30px;
+  }
+
+  .contato-inner {
+    grid-template-columns:
+      1fr 280px;
+
+    gap: 30px;
+  }
 }
 
 
@@ -1045,7 +1434,6 @@ button {
   .container {
     width: min(92%, 600px);
   }
-
 
   /* Header */
 
@@ -1069,11 +1457,16 @@ button {
     font-size: 15px;
   }
 
+  .header-actions {
+    gap: 7px;
+  }
+
 
   /* Hero */
 
   .hero-home {
     padding-top: 120px;
+
     padding-bottom: 70px;
   }
 
@@ -1087,6 +1480,7 @@ button {
 
   .hero-home-text {
     text-align: center;
+
     margin: auto;
   }
 
@@ -1111,16 +1505,42 @@ button {
   }
 
 
+  /* Hero simples */
+
+  .hero-pro {
+    padding-top: 125px;
+
+    padding-bottom: 55px;
+  }
+
+  .hero-pro-inner.single-col {
+    text-align: center;
+  }
+
+  .hero-pro-nome {
+    font-size: 35px;
+  }
+
+  .hero-pro-desc {
+    font-size: 15px;
+  }
+
+
   /* Cards */
 
   .home-navigation {
-    padding: 55px 0 75px;
+    padding:
+      55px 0 75px;
   }
 
   .navigation-title {
     font-size: 23px;
 
     margin-bottom: 28px;
+  }
+
+  .index-cards {
+    padding-bottom: 70px;
   }
 
   .index-cards-grid {
@@ -1136,9 +1556,11 @@ button {
 
     display: grid;
 
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns:
+      auto 1fr auto;
 
-    grid-template-rows: auto auto;
+    grid-template-rows:
+      auto auto;
 
     column-gap: 16px;
   }
@@ -1168,6 +1590,98 @@ button {
   }
 
 
+  /* Páginas internas */
+
+  .sobre-pro {
+    padding-top: 125px;
+
+    padding-bottom: 60px;
+  }
+
+  .sobre-pro-inner.no-photo {
+    max-width: 100%;
+  }
+
+  .sobre-pro-titulo {
+    font-size: 28px;
+  }
+
+  .historia-pro {
+    padding-top: 125px;
+
+    padding-bottom: 60px;
+  }
+
+  .historia-pro-inner,
+  .contato-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .historia-pro-foto img {
+    height: 380px;
+  }
+
+  .historia-pro-texto h2 {
+    font-size: 28px;
+  }
+
+  .contato-pro {
+    padding-top: 125px;
+
+    padding-bottom: 60px;
+  }
+
+  .contato-title {
+    font-size: 28px;
+  }
+
+  .contato-foto {
+    order: -1;
+  }
+
+  .contato-foto img {
+    height: 300px;
+  }
+
+
+  /* Receitas e conteúdos */
+
+  .receitas-section {
+    width: min(92%, 600px);
+
+    padding-top: 125px;
+
+    padding-bottom: 60px;
+  }
+
+  .receitas-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .receita-card img {
+    height: 210px;
+  }
+
+
+  /* Receita individual */
+
+  .receita-page {
+    padding-top: 125px;
+
+    padding-bottom: 60px;
+  }
+
+  .receita-foto {
+    height: 230px;
+  }
+
+  .receita-title {
+    font-size: 27px;
+  }
+
+
   /* Footer */
 
   .footer-inner {
@@ -1181,29 +1695,15 @@ button {
   }
 
 
-  /* Páginas internas */
+  /* Menu */
 
-  .historia-pro-inner,
-  .contato-inner {
-    grid-template-columns: 1fr;
+  .mobile-menu {
+    width: min(340px, 88vw);
   }
 
-  .historia-pro-foto img {
-    height: 380px;
+  .mobile-menu-inner {
+    padding: 25px;
   }
-
-  .contato-foto img {
-    height: 300px;
-  }
-
-  .receita-foto {
-    height: 230px;
-  }
-
-  .receita-title {
-    font-size: 27px;
-  }
-
 }
 
 
@@ -1213,6 +1713,10 @@ button {
 
 @media (max-width: 420px) {
 
+  .brand h1 {
+    font-size: 17px;
+  }
+
   .hero-home-text h2 {
     font-size: 34px;
   }
@@ -1221,8 +1725,39 @@ button {
     height: 360px;
   }
 
-  .mobile-menu-inner {
-    padding: 25px;
+  .hero-pro-nome {
+    font-size: 31px;
   }
 
+  .mobile-menu {
+    width: 88vw;
+  }
+
+  .mobile-menu-inner {
+    padding: 22px;
+  }
+
+  .mobile-menu ul {
+    margin-top: 45px;
+  }
+
+  .mobile-menu a {
+    font-size: 16px;
+
+    padding: 16px 0;
+  }
+
+  .card-click {
+    padding: 15px;
+  }
+
+  .card-click p {
+    font-size: 13px;
+  }
+
+  .btn-voltar {
+    right: 15px;
+
+    bottom: 15px;
+  }
 }
