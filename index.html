@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Letícia Dalprá — Futura Nutricionista</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <h1>Letícia Dalprá</h1>
+      <span class="micro">Futura Nutricionista</span>
+    </a>
+
+    <div class="header-actions">
+
+      <!-- MODO ESCURO -->
+      <button
+        id="darkToggle"
+        class="dark-toggle"
+        aria-label="Alternar modo escuro"
+        type="button">
+        🌙
+      </button>
+
+      <!-- MENU -->
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        type="button">
+        ☰
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     MENU LATERAL
+========================= -->
+
+<nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+
+  <div class="mobile-menu-inner">
+
+    <button
+      id="menuClose"
+      class="menu-close"
+      aria-label="Fechar menu"
+      type="button">
+      ×
+    </button>
+
+    <ul>
+
+      <li>
+        <a href="index.html">Início</a>
+      </li>
+
+      <li>
+        <a href="sobre.html">Sobre o site</a>
+      </li>
+
+      <li>
+        <a href="historia.html">Minha História</a>
+      </li>
+
+      <li>
+        <a href="receitas.html">Receitas</a>
+      </li>
+
+      <li>
+        <a href="conteudos.html">Conteúdos Educativos</a>
+      </li>
+
+      <li>
+        <a href="contato.html">Contato</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+  <section class="hero-home">
+
+    <div class="container hero-home-inner">
+
+      <div class="hero-home-text fade-in">
+
+        <span class="hero-eyebrow">
+          Nutrição além da dieta.
+        </span>
+
+        <h2>
+          Informação, equilíbrio e uma relação mais leve com a alimentação.
+        </h2>
+
+        <p>
+          Aqui compartilho minha jornada rumo à Nutrição —
+          conteúdos, receitas e aprendizados reais.
+        </p>
+
+      </div>
+
+
+      <div class="hero-home-image fade-in">
+
+        <img
+          src="eu.jpeg"
+          alt="Letícia Dalprá"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CARDS
+  ========================= -->
+
+  <section class="home-navigation">
+
+    <div class="container">
+
+      <p class="navigation-title">
+        Explore o que você encontra por aqui
+      </p>
+
+
+      <div class="index-cards-grid">
+
+
+        <a href="sobre.html" class="index-card">
+
+          <div class="index-card-icon">
+            ♧
+          </div>
+
+          <h3>
+            Sobre o site
+          </h3>
+
+          <p>
+            Propósito, visão e como navegar.
+          </p>
+
+          <span class="index-card-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <a href="historia.html" class="index-card">
+
+          <div class="index-card-icon">
+            ♡
+          </div>
+
+          <h3>
+            Minha História
+          </h3>
+
+          <p>
+            Minha trajetória pessoal com alimentação.
+          </p>
+
+          <span class="index-card-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <a href="receitas.html" class="index-card">
+
+          <div class="index-card-icon">
+            ♧
+          </div>
+
+          <h3>
+            Receitas
+          </h3>
+
+          <p>
+            Práticas, acessíveis e gostosas.
+          </p>
+
+          <span class="index-card-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <a href="conteudos.html" class="index-card">
+
+          <div class="index-card-icon">
+            ♧
+          </div>
+
+          <h3>
+            Conteúdos Educativos
+          </h3>
+
+          <p>
+            Explicações simples e úteis.
+          </p>
+
+          <span class="index-card-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <a href="contato.html" class="index-card">
+
+          <div class="index-card-icon">
+            ✉
+          </div>
+
+          <h3>
+            Contato
+          </h3>
+
+          <p>
+            WhatsApp, e-mail e Instagram.
+          </p>
+
+          <span class="index-card-arrow">
+            →
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer class="site-footer">
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+
+      <strong>
+        Letícia Dalprá
+      </strong>
+
+      <span>
+        Futura Nutricionista
+      </span>
+
+    </div>
+
+
+    <div class="footer-copy">
+
+      <p>
+        © <span id="year"></span> Letícia Dalprá.
+      </p>
+
+      <p>
+        Todos os direitos reservados.
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+
+<script>
+
+  /* =========================
+     ANO DO RODAPÉ
+  ========================= */
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+
+  /* =========================
+     MODO ESCURO
+  ========================= */
+
+  const darkToggle =
+    document.getElementById('darkToggle');
+
+  if (localStorage.getItem('darkMode') === 'true') {
+
+    document.documentElement.classList.add('dark');
+
+  }
+
+
+  darkToggle.addEventListener('click', () => {
+
+    document.documentElement.classList.toggle('dark');
+
+    localStorage.setItem(
+      'darkMode',
+      document.documentElement.classList.contains('dark')
+    );
+
+  });
+
+
+  /* =========================
+     MENU
+  ========================= */
+
+  const menuToggle =
+    document.getElementById('menuToggle');
+
+  const mobileMenu =
+    document.getElementById('mobileMenu');
+
+  const menuClose =
+    document.getElementById('menuClose');
+
+
+  menuToggle.addEventListener('click', () => {
+
+    mobileMenu.classList.add('active');
+
+    mobileMenu.setAttribute('aria-hidden', 'false');
+
+    menuToggle.setAttribute('aria-expanded', 'true');
+
+  });
+
+
+  menuClose.addEventListener('click', () => {
+
+    mobileMenu.classList.remove('active');
+
+    mobileMenu.setAttribute('aria-hidden', 'true');
+
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+  });
+
+
+  /* Fecha o menu quando clicar em uma página */
+
+  const menuLinks =
+    mobileMenu.querySelectorAll('a');
+
+  menuLinks.forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      mobileMenu.classList.remove('active');
+
+      mobileMenu.setAttribute('aria-hidden', 'true');
+
+      menuToggle.setAttribute('aria-expanded', 'false');
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
