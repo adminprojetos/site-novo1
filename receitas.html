@@ -1,68 +1,138 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Receitas — Letícia Dalprá</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
+
     <div class="brand">
-      <svg viewBox="0 0 24 24" width="34" height="34"><path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/></svg>
-      <div><h1>Letícia Dalprá</h1><p class="micro">Futura Nutricionista</p></div>
+      <h1>Letícia Dalprá</h1>
+      <div class="micro">Futura Nutricionista</div>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li>
-        <li><a href="historia.html">Minha História</a></li><li><a href="receitas.html">Receitas</a></li>
-        <li><a href="conteudos.html">Conteúdos Educativos</a></li><li><a href="contato.html" class="btn-ghost">Contato</a></li>
-      </ul>
-    </nav>
-    <button id="darkToggle" class="dark-toggle" aria-label="Alternar modo escuro">🌙</button>
+
+    <div class="header-actions">
+
+      <!-- MENU -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <!-- DARK MODE -->
+      <button id="darkToggle" class="dark-toggle" aria-label="Alternar modo escuro">
+        🌙
+      </button>
+
+    </div>
+
   </div>
+
+  <!-- MENU -->
+  <nav id="mobileMenu" class="mobile-menu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="historia.html">Minha História</a></li>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="conteudos.html">Conteúdos Educativos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
 </header>
 
+
 <section class="receitas-section">
+
   <div class="receitas-grid">
-  <a href="overnight.html" class="receita-card slide-up">
-    <img src="overnight.jpeg" alt="Overnight oats">
-    <h3>Overnight Oats</h3>
-  </a>
 
-  <a href="ovo-mexido.html" class="receita-card slide-up">
-    <img src="ovo-mexido.jpeg" alt="Ovo mexido rápido">
-    <h3>Lanche rápido de ovo mexido</h3>
-  </a>
+    <a href="overnight.html" class="receita-card slide-up">
+      <img src="overnight.jpeg" alt="Overnight oats">
+      <h3>Overnight Oats</h3>
+    </a>
 
-  <a href="granola.html" class="receita-card slide-up">
-    <img src="granola.jpeg" alt="Granola caseira">
-    <h3>Iogurte com granola caseira</h3>
-  </a>
-    
+    <a href="ovo-mexido.html" class="receita-card slide-up">
+      <img src="ovo-mexido.jpeg" alt="Ovo mexido rápido">
+      <h3>Lanche rápido de ovo mexido</h3>
+    </a>
+
+    <a href="granola.html" class="receita-card slide-up">
+      <img src="granola.jpeg" alt="Granola caseira">
+      <h3>Iogurte com granola caseira</h3>
+    </a>
+
     <a href="sorvete.html" class="receita-card slide-up">
-  <img src="sorvete.jpeg" alt="Sorvete saudável de banana">
-  <h3>Sorvete Saudável de Banana</h3>
-</a>
+      <img src="sorvete.jpeg" alt="Sorvete saudável de banana">
+      <h3>Sorvete Saudável de Banana</h3>
+    </a>
 
     <a href="bolo-mesclado.html" class="receita-card slide-up">
-    <img src="bolo.jpeg" alt="Bolo mesclado sem açúcar">
-    <h3>Bolo sem açúcar e sem glúten</h3>
-  </a>
-    
-</div>
+      <img src="bolo.jpeg" alt="Bolo mesclado sem açúcar">
+      <h3>Bolo sem açúcar e sem glúten</h3>
+    </a>
+
+  </div>
+
 </section>
 
+
 <script>
+
+  /* =========================
+     DARK MODE
+  ========================= */
+
   const toggle = document.getElementById('darkToggle');
-  if(localStorage.getItem('darkMode') === 'true'){ document.documentElement.classList.add('dark'); }
+
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.documentElement.classList.add('dark');
+  }
+
   toggle.addEventListener('click', () => {
+
     document.documentElement.classList.toggle('dark');
-    localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+
+    localStorage.setItem(
+      'darkMode',
+      document.documentElement.classList.contains('dark')
+    );
+
   });
+
+
+  /* =========================
+     MENU
+  ========================= */
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+
+    mobileMenu.classList.toggle('open');
+
+    if (mobileMenu.classList.contains('open')) {
+
+      menuToggle.textContent = '✕';
+      menuToggle.setAttribute('aria-label', 'Fechar menu');
+
+    } else {
+
+      menuToggle.textContent = '☰';
+      menuToggle.setAttribute('aria-label', 'Abrir menu');
+
+    }
+
+  });
+
 </script>
+
 </body>
 </html>
-
-
