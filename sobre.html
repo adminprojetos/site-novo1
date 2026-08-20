@@ -104,13 +104,6 @@
 <script>
 
   /* =========================
-     ANO DO RODAPÉ
-  ========================= */
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-
-  /* =========================
      DARK MODE
   ========================= */
 
@@ -141,17 +134,25 @@
 
   menuToggle.addEventListener('click', () => {
 
-    mobileMenu.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
 
-    if (mobileMenu.classList.contains('open')) {
+    if (mobileMenu.classList.contains('active')) {
 
       menuToggle.textContent = '✕';
-      menuToggle.setAttribute('aria-label', 'Fechar menu');
+
+      menuToggle.setAttribute(
+        'aria-label',
+        'Fechar menu'
+      );
 
     } else {
 
       menuToggle.textContent = '☰';
-      menuToggle.setAttribute('aria-label', 'Abrir menu');
+
+      menuToggle.setAttribute(
+        'aria-label',
+        'Abrir menu'
+      );
 
     }
 
