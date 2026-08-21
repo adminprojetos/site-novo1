@@ -1238,14 +1238,17 @@ button {
    RESPONSIVO — CELULAR
 ========================================================= */
 
-.contato-foto img {
-  width: min(340px, 90vw);
-  height: 410px;
+@media (max-width: 700px) {
 
-  margin: auto;
+  .contato-foto img {
+    width: min(340px, 90vw);
+    height: 410px;
 
-  border-radius: 180px 180px 20px 20px;
-}
+    margin: auto;
+
+    border-radius: 180px 180px 20px 20px;
+  }
+
 
   .container {
     width: min(92%, 600px);
